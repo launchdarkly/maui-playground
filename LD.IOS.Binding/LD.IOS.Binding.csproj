@@ -1,0 +1,36 @@
+﻿
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0-ios</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>true</ImplicitUsings>
+    <IsBindingProject>true</IsBindingProject>
+
+    <!--
+      Enable trim analyzers for class libraries.
+      To learn more, see: https://learn.microsoft.com/dotnet/core/deploying/trimming/prepare-libraries-for-trimming
+    -->
+    <IsTrimmable>true</IsTrimmable>
+  </PropertyGroup>
+
+  <ItemGroup>
+      <!-- Bindings: these two items tell MSBuild these are ObjC binding sources -->
+      <ObjcBindingApiDefinition Include="ApiDefinitions.cs" />
+      <ObjcBindingCoreSource Include="Structs.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Point this to your actual xcframework/framework path -->
+    <NativeReference Include="Native/LaunchDarklySR_iOS.xcframework">
+      <Kind>Framework</Kind>
+      <ForceLoad>true</ForceLoad>
+      <!-- Optional conveniences:
+      <SmartLink>false</SmartLink>
+      <Frameworks>AVFoundation;CoreMedia</Frameworks>
+      <WeakFrameworks>Vision</WeakFrameworks>
+      <LinkerFlags>-ObjC</LinkerFlags>
+      -->
+    </NativeReference>
+  </ItemGroup>
+
+</Project>
