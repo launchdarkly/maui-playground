@@ -16,5 +16,15 @@
 				</Grid>
 			</DataTemplate>
 		</CollectionView.ItemTemplate>
+		<CollectionView.Footer>
+			<Grid Padding="20" ColumnSpacing="8">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<Button Grid.Column="0" Text="Log" BackgroundColor="Blue" Clicked="OnLogButtonClicked" />
+				<Button Grid.Column="1" Text="Metric(Counter)" BackgroundColor="Blue" Clicked="OnMetricCounterButtonClicked" />
+			</Grid>
+		</CollectionView.Footer>
 	</CollectionView>
 </ContentPage>

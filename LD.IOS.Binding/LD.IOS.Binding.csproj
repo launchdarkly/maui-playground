@@ -16,6 +16,7 @@
   <ItemGroup>
       <!-- Bindings: these two items tell MSBuild these are ObjC binding sources -->
       <ObjcBindingApiDefinition Include="ApiDefinitions.cs" />
+      <ObjcBindingApiDefinition Include="ApiMasking.cs" />
       <ObjcBindingCoreSource Include="Structs.cs" />
   </ItemGroup>
 

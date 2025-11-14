@@ -21,4 +21,13 @@ namespace LDSdk
     }
 }
 
- 
+namespace LDObserveBinding
+{
+    [BaseType(typeof(NSObject))]
+    interface LDObserveBridge
+    {
+        // + (void)recordLogWithMessage:(NSString*)message severity:(NSInteger)severity attributes:(NSDictionary*)attributes;
+        [Static, Export("recordLogWithMessage:severity:attributes:")]
+        void RecordLog(string message, nint severity, NSDictionary attributes);
+    }
+}

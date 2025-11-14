@@ -67,5 +67,4 @@
 	<ItemGroup Condition="'$(TargetFramework)'=='net9.0-ios'">
         <ProjectReference Include="..\LD.IOS.Binding\LD.IOS.Binding.csproj" />
     </ItemGroup>
-
 </Project>

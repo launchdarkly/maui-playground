@@ -1,3 +1,5 @@
+using LDSdk;
+
 namespace MauiExample;
 
 public partial class CreditCardPage : ContentPage
@@ -5,6 +7,17 @@ public partial class CreditCardPage : ContentPage
 	public CreditCardPage()
 	{
 		InitializeComponent();
+
+		this.Loaded += OnPageLoaded;
+	}
+
+	private void OnPageLoaded(object? sender, EventArgs e)
+	{
+		this.Loaded -= OnPageLoaded;
+		
+		//this.Content?.LDIgnore();
+
+		BrandLabel.LDMask();
 	}
 
 	private enum CardBrand

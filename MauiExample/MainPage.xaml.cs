@@ -1,10 +1,21 @@
-﻿namespace MauiExample;
+﻿using LaunchDarklyObservability;
+
+namespace MauiExample;
 
 public partial class MainPage : ContentPage
 {
 	public MainPage()
 	{
 		InitializeComponent();
+	}
+
+	private void OnLogButtonClicked(object? sender, EventArgs e)
+	{
+		LDObserve.RecordLog("Log from MAUI", LDObserve.Severity.Info, new Dictionary<string, object?> { { "maui", "island" } });
+	}
+
+	private void OnMetricCounterButtonClicked(object? sender, EventArgs e)
+	{
 	}
 
 	private async void OnMenuSelectionChanged(object? sender, SelectionChangedEventArgs e)
